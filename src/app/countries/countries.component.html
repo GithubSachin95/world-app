@@ -1,0 +1,24 @@
+<div [ngBusy]="{busy: busy, message: 'Loading...'}"></div>
+<link rel="stylesheet" href="/node_modules/angular2-busy/build/style/busy.css">
+<div class="head" *ngIf="!AllCountries">{{region}}</div>
+<div class="head" *ngIf="AllCountries">All Countries</div>
+<div class="row">
+  
+	<div *ngFor="let country of countries">
+		<div class="col-3">
+			<div class="card" style="width: 18rem;" [routerLink]="['/country' , country.name ]" >
+				<img class="card-img-top" [src]="country.flag" alt="Card image cap">
+				<div class="card-body">
+					<p class="card-text"><span>Name : </span>{{country.name}}</p>
+					<p class="card-text"><span>Capital : </span>{{country.capital}}</p>
+					<p class="card-text"><span>Timezone : </span>{{country.timezones}}</p>
+					<div *ngFor="let currency of country.currencies">
+						<p class="card-text" [routerLink]="['/currencies' , currency.code]"><span>Currency : </span>
+							<span class="currencyLink">{{currency.name}}</span></p>
+					</div>
+				</div>
+			</div>
+			<br>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,24 @@
+p {
+    font-family: Lato;
+  }
+  .logo{
+    font-family: 'Indie Flower', cursive;
+    font-size: 40px;
+  }
+  .links{
+    font-family: 'Pacifico', cursive;
+    font-size: 25px;
+  }
+  
+  .body{
+      background-image: url("https://cdn-images-1.medium.com/max/2000/0*leYmedWAWmBeRv1r.");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+  
+  }
+  
+  .back{
+    float: left;
+  }
+  

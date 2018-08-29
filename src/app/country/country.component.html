@@ -1,0 +1,32 @@
+<div [ngBusy]="{busy: busy, message: 'Loading...'}"></div>
+<ul class="list-group list-group-flush">
+	<div *ngFor="let country of countryData">
+		<div class="card">
+			<img class="img-responsive" [src]="country.flag" alt="Card image cap">
+		</div>
+		<li class="list-group-item"><span>Country : </span>{{country.name}}</li>
+		<li class="list-group-item"><span>CAPITAL : </span>{{country.capital}}</li>
+		<li class="list-group-item"><span>REGION : </span>{{country.region}}</li>
+
+		<li class="list-group-item"><span>Area : </span>{{country.area}} km²</li>
+		<li class="list-group-item"><span>Calling Code : </span>{{country.callingCodes}}</li>
+		<li class="list-group-item"><span>Native Name : </span>{{country.nativeName}}</li>
+		<li class="list-group-item"><span>POPULATION : </span>{{country.population}}</li>
+		<li class="list-group-item"><span>LANGUAGES :
+    <span *ngFor="let language of country.languages">
+    <a  [routerLink]="['/language' , language.iso639_1]">{{language.name}} ( {{language.nativeName}} )</a> </span></span>
+		</li>
+
+		<li class="list-group-item"><span>SUB REGION : </span>{{country.subregion}}</li>
+		<li class="list-group-item"><span>TIMEZONE : </span>{{country.timezones}}</li>
+		<li class="list-group-item" *ngIf="country.regionalBlocs"><span>REGIONAL BLOCKS :
+    <span *ngFor="let block of country.regionalBlocs">
+    {{block.name}} </span></span>
+		</li>
+		<li class="list-group-item" ><span>CURRENCY :
+    <span *ngFor="let currency of country.currencies" >
+    <a [routerLink]="['/currencies' , currency.code]">{{currency.name}} </a> </span></span>
+		</li>
+
+	</div>
+</ul>

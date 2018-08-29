@@ -1,10 +1,17 @@
 import { Component } from '@angular/core';
-
+import { Location } from '@angular/common';
 @Component({
-  selector: 'app-root',
+  selector: 'my-app',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: [ './app.component.css' ]
 })
-export class AppComponent {
-  title = 'my-app';
+export class AppComponent  {
+
+    constructor(public location :Location){
+
+    }
+
+    goBack(){
+      this.location.back();
+    }
 }

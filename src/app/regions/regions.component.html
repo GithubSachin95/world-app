@@ -1,0 +1,15 @@
+<div class="head">Regions</div>
+<div class="row">
+    <div *ngFor="let region of regions">
+      <div class="col-3">
+<div class="card" style="width: 18rem;" [routerLink]="['/countries' , region.name ]">
+  <div class="card-body">
+    <p class="card-text name">{{region.name}}</p>
+     <p class="card-text">{{region.description}}</p>
+  </div>
+  <a [routerLink]="['/countries' , region.name ]">View all countries</a>
+</div>
+<br>
+</div>
+</div>
+</div>
